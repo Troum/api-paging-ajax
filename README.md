@@ -1,24 +1,20 @@
-# Lumen PHP Framework
+# API Paging Ajax
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+В данном репозитории находится API для Paging Ajax
+Для работы с данным репозиторием, необходимо наличие ```composer```, **Laravel Valet** или **Docker** (конфигурацию для **Docker** я не делал, так как пользуюсь **Laravel Valet** **Homestead**
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+Склонировав репозиторий, установите зависимости через команду ```composer install```
+Далее будет описание для работы через **Laravel Valet** и macOS:
 
-## Official Documentation
+1. ```brew update``` -- установка зависимостей пакетного установщика macOS
+2. ```brew install php``` -- установка PHP
+3. ```composer global require laravel/valet``` -- установка зависимостей для **Valet**
+4. ```valet install``` -- непосредственно установка **Valet**
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+Далее необходимо перейти в директорию , в которую Вы склонировали репозиторий (не в репозиторий), внутри него запустить команду ```valet park``` -- данная папка будет припаркована в качестве хоста.
 
-## Contributing
+Теперь необходимо перейти в репозиторий и внутри него запустить команду ```composer install``` для установки всех зависимостей.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Далее необходимо файл ```.enx.example``` переименовать в ```.env```, внутри репозитория запустить команду ```php artisan key:generate``` и внутри файла указать следующие конфигурации:
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```DB_DATABASE=<абсолютный_путь_к_файлу_database.sqlite>``` -- данный файл размещается в репозитории в директории **database** (получить абсолютный путь можно через свойства или же копированием его посредством IDE PHPStorm или любой другой IDE. Данный файл содержит в себе 100 записей для плиток.
